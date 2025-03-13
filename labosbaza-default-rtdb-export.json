@@ -1,0 +1,233 @@
+{
+  "categories": {
+    "-OIX2mx4QMdHGNgVrMlP": {
+      "name": "Racunala"
+    },
+    "-OJFlMaBRP5AGrhWwQ01": {
+      "name": "Novosti"
+    },
+    "-OJJzmi1BBFIfn2L3M2d": {
+      "name": "Auto"
+    },
+    "-OJJznzzYi0NKs7vmhfl": {
+      "name": "Moto"
+    },
+    "-OJJzpYBhK55KHqJ8G2-": {
+      "name": "Nogomet"
+    }
+  },
+  "comments": {
+    "-OJK-SmggrNAF0SktxXE": {
+      "content": "Ovo je 1. komentar!",
+      "date": "02/17/2025 6:52:55",
+      "threadId": "-OJJzyxSoGM1svDs-Gzd",
+      "userId": "-OJJzcDmj76pYr1lZ172"
+    },
+    "-OJK-VHsACgb48PEh_wl": {
+      "content": "Ovo je 2. komentar",
+      "date": "02/17/2025 6:43:29",
+      "threadId": "-OJJzyxSoGM1svDs-Gzd",
+      "userId": "-OJJzcDmj76pYr1lZ172"
+    },
+    "-OJK-dTg5tEzpueyxWD_": {
+      "content": "Bok",
+      "date": "02/17/2025 6:44:06",
+      "threadId": "-OJK-c9nzCaYoX0E5yGz",
+      "userId": "-OJJzcDmj76pYr1lZ172"
+    },
+    "-OJK04Dw5AStyJzOBoG9": {
+      "content": "Novi komentar",
+      "date": "02/17/2025 6:46:00",
+      "threadId": "-OJK02PAfb22BIJLsQRG",
+      "userId": "-OJK-whivE5G0IUuDHxg"
+    },
+    "-OJK083lgHCBUtR2KGF6": {
+      "content": "Ovo je 3. komentar",
+      "date": "02/17/2025 6:46:16",
+      "threadId": "-OJJzyxSoGM1svDs-Gzd",
+      "userId": "-OJK-whivE5G0IUuDHxg"
+    },
+    "-OJK0XncUwnKiK11tO_1": {
+      "content": "Komentar 1",
+      "date": "02/17/2025 6:48:01",
+      "threadId": "-OJK0TmKlEF5LRR_WLHX",
+      "userId": "-OJK-whivE5G0IUuDHxg"
+    },
+    "-OJK0ePQF6lvo198wQEG": {
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "date": "02/17/2025 6:48:32",
+      "threadId": "-OJK02PAfb22BIJLsQRG",
+      "userId": "-OJJzcDmj76pYr1lZ172"
+    },
+    "-OJK1861P2HxENzVpnRv": {
+      "content": "Bok Gvido",
+      "date": "02/17/2025 6:50:38",
+      "threadId": "-OJJzyxSoGM1svDs-Gzd",
+      "userId": "-OJK0yU0iSKg5hGDWA1x"
+    },
+    "-OJK1Lh1fj9XaBb_BXsw": {
+      "content": "Bok",
+      "date": "02/17/2025 6:51:34",
+      "threadId": "-OJK1JzRpFZzNC4EC_OM",
+      "userId": "-OJK0yU0iSKg5hGDWA1x"
+    },
+    "-OJK1RWEPYZ7QSBlnnXr": {
+      "content": "Bok i tebi",
+      "date": "02/17/2025 6:51:58",
+      "threadId": "-OJK1JzRpFZzNC4EC_OM",
+      "userId": "-OJJzcDmj76pYr1lZ172"
+    },
+    "-OJKCRqRl8Ug5LFJOAVn": {
+      "content": "Bok!",
+      "date": "02/17/2025 7:40:22",
+      "threadId": "-OJKCQiCFL5B_hJ6jVBn",
+      "userId": "-OJKCEedibyhFj74meFC"
+    }
+  },
+  "likes": {
+    "-OJK-QTypGUMNXWQEQ27": {
+      "contentId": "-OJJzyxSoGM1svDs-Gzd",
+      "userId": "-OJJzcDmj76pYr1lZ172"
+    },
+    "-OJK-TLtwaN6Rp-CWUkJ": {
+      "contentId": "-OJK-SmggrNAF0SktxXE",
+      "userId": "-OJJzcDmj76pYr1lZ172"
+    },
+    "-OJK02vBYcltnR9gCFN8": {
+      "contentId": "-OJK02PAfb22BIJLsQRG",
+      "userId": "-OJK-whivE5G0IUuDHxg"
+    },
+    "-OJK05z_qrkfNkg7EBi3": {
+      "contentId": "-OJJzyxSoGM1svDs-Gzd",
+      "userId": "-OJK-whivE5G0IUuDHxg"
+    },
+    "-OJK06Oi2kkQv3u3vOSU": {
+      "contentId": "-OJK-SmggrNAF0SktxXE",
+      "userId": "-OJK-whivE5G0IUuDHxg"
+    },
+    "-OJK08accaYoD-MAqMoB": {
+      "contentId": "-OJK083lgHCBUtR2KGF6",
+      "userId": "-OJK-whivE5G0IUuDHxg"
+    },
+    "-OJK0UYSpyh26Xj-xWEl": {
+      "contentId": "-OJK0TmKlEF5LRR_WLHX",
+      "userId": "-OJK-whivE5G0IUuDHxg"
+    },
+    "-OJK0ezN4gGPhXn1O0qN": {
+      "contentId": "-OJK02PAfb22BIJLsQRG",
+      "userId": "-OJJzcDmj76pYr1lZ172"
+    },
+    "-OJK18NhrNqPapWNCaid": {
+      "contentId": "-OJJzyxSoGM1svDs-Gzd",
+      "userId": "-OJK0yU0iSKg5hGDWA1x"
+    },
+    "-OJK1RnObMHmzuCZBFzM": {
+      "contentId": "-OJK1JzRpFZzNC4EC_OM",
+      "userId": "-OJJzcDmj76pYr1lZ172"
+    },
+    "-OJKCShye5yFK_kcN2X2": {
+      "contentId": "-OJKCQiCFL5B_hJ6jVBn",
+      "userId": "-OJKCEedibyhFj74meFC"
+    },
+    "-OJKCbFs-0aEjZncvvrU": {
+      "contentId": "-OJJzyxSoGM1svDs-Gzd",
+      "userId": "-OJKCEedibyhFj74meFC"
+    },
+    "-OJKCbeB33kJXje0TQlu": {
+      "contentId": "-OJK-SmggrNAF0SktxXE",
+      "userId": "-OJKCEedibyhFj74meFC"
+    },
+    "-OJKCuIxGwwYuLYnu2g4": {
+      "contentId": "-OJK1861P2HxENzVpnRv",
+      "userId": "-OJJzcDmj76pYr1lZ172"
+    }
+  },
+  "threads": {
+    "-OJJzyxSoGM1svDs-Gzd": {
+      "categoryId": "-OIX2mx4QMdHGNgVrMlP",
+      "content": "Ovo je 1. thread edit",
+      "date": "02/17/2025 7:41:59",
+      "name": "Racunala thread 1",
+      "userId": "-OJJzcDmj76pYr1lZ172"
+    },
+    "-OJK-c9nzCaYoX0E5yGz": {
+      "categoryId": "-OJFlMaBRP5AGrhWwQ01",
+      "content": "Ovo je prvi thread u kategoriji novosti!",
+      "date": "02/17/2025 6:44:01",
+      "name": "Novosti thread 1",
+      "userId": "-OJJzcDmj76pYr1lZ172"
+    },
+    "-OJK-p3IXe3gUBO7EejB": {
+      "categoryId": "-OJJzpYBhK55KHqJ8G2-",
+      "content": "Bok, ovo je thread u kategoriji nogomet!!!",
+      "date": "02/17/2025 6:44:54",
+      "name": "Nogomet Thread",
+      "userId": "-OJJzcDmj76pYr1lZ172"
+    },
+    "-OJK02PAfb22BIJLsQRG": {
+      "categoryId": "-OIX2mx4QMdHGNgVrMlP",
+      "content": "Ovo je novi thread u kategoriji Racunala!",
+      "date": "02/17/2025 6:45:53",
+      "name": "2. Thread",
+      "userId": "-OJK-whivE5G0IUuDHxg"
+    },
+    "-OJK0TmKlEF5LRR_WLHX": {
+      "categoryId": "-OJJzmi1BBFIfn2L3M2d",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "date": "02/17/2025 6:47:45",
+      "name": "Auto thread",
+      "userId": "-OJK-whivE5G0IUuDHxg"
+    },
+    "-OJK128RwwQR_AViGx_q": {
+      "categoryId": "-OIX2mx4QMdHGNgVrMlP",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "date": "02/17/2025 6:50:14",
+      "name": "Pero thread",
+      "userId": "-OJK0yU0iSKg5hGDWA1x"
+    },
+    "-OJK1JzRpFZzNC4EC_OM": {
+      "categoryId": "-OJJzmi1BBFIfn2L3M2d",
+      "content": "Bok. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "date": "02/17/2025 6:51:27",
+      "name": "Novi thread Auto",
+      "userId": "-OJK0yU0iSKg5hGDWA1x"
+    },
+    "-OJKCQiCFL5B_hJ6jVBn": {
+      "categoryId": "-OIX2mx4QMdHGNgVrMlP",
+      "content": "Ovo je tekst novog threada! Edit",
+      "date": "02/17/2025 7:40:15",
+      "name": "Korisnik Thread",
+      "userId": "-OJKCEedibyhFj74meFC"
+    }
+  },
+  "users": {
+    "-OJJzcDmj76pYr1lZ172": {
+      "eMail": "gvido@gmail.com",
+      "name": "Gvido Maskalan",
+      "pass": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
+      "role": "admin",
+      "username": "Gvido"
+    },
+    "-OJK-whivE5G0IUuDHxg": {
+      "eMail": "user@gmail.com",
+      "name": "user",
+      "pass": "16f78a7d6317f102bbd95fc9a4f3ff2e3249287690b8bdad6b7810f82b34ace3",
+      "role": "user",
+      "username": "username"
+    },
+    "-OJK0yU0iSKg5hGDWA1x": {
+      "eMail": "pero.perke@gmail.com",
+      "name": "Pero Perke",
+      "pass": "5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8",
+      "role": "user",
+      "username": "Pero123"
+    },
+    "-OJKCEedibyhFj74meFC": {
+      "eMail": "korisnik@gmail.com",
+      "name": "Ime Prezima",
+      "pass": "25862b1b6ca0ee21d472a8529a6ab06e1afa5b40a73bf3cedea4a4afdcd63ad7",
+      "role": "user",
+      "username": "korisnik"
+    }
+  }
+}
