@@ -1,0 +1,166 @@
+<style>
+  * {
+    font-family: Arial;
+
+    margin: 0;
+    padding: 0;
+  }
+
+  .main {
+    margin: auto;
+  }
+
+  .nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 60px;
+    align-items: center;
+    background-color: #145185;
+    color: white;
+  }
+
+  .row {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .nav p {
+    padding: 10px;
+    font-size: 15px;
+  }
+
+  .nav .a {
+    color: white;
+    transition: color 0.2s;
+  }
+  .nav .a:hover {
+    color: #cfcfcf;
+  }
+  .nav .a:active {
+    color: #888888;
+  }
+
+  .comments {
+    margin: 20px;
+  }
+
+  .comments p {
+    font-size: 20px;
+  }
+
+  .comments .comm {
+    margin-top: 10px;
+    width: calc(100% - 40px);
+    padding: 20px;
+    background-color: #e3e7ef;
+    border-radius: 8px;
+  }
+
+  .comments .row button {
+    width: 60px;
+    background-color: #145185;
+    color: white;
+    padding: 5px;
+    margin-left: 5px;
+    margin-top: 5px;
+    border-radius: 8px;
+    transition: color 0.2s;
+    transition: background-color 0.2s;
+  }
+
+  .comments .row button:hover {
+    color: #cfcfcf;
+    background-color: #0d375a;
+  }
+
+  .comments .row button:active {
+    color: #888888;
+    background-color: #061c2e;
+  }
+
+
+
+
+
+
+  .thread {
+    margin: 20px;
+  }
+
+  .thread p {
+    font-size: 20px;
+  }
+
+  .thread .th {
+    margin-top: 10px;
+    width: calc(100% - 45px);
+    padding: 20px;
+    background-color: #e3e7ef;
+    border-radius: 8px;
+  }
+
+  .thread .row button {
+    width: 60px;
+    background-color: #145185;
+    color: white;
+    padding: 5px;
+    margin-left: 5px;
+    margin-top: 5px;
+    border-radius: 8px;
+    transition: color 0.2s;
+    transition: background-color 0.2s;
+  }
+
+  .thread .row button:hover {
+    color: #cfcfcf;
+    background-color: #0d375a;
+  }
+
+  .thread .row button:active {
+    color: #888888;
+    background-color: #061c2e;
+  }
+
+
+</style>
+
+
+<main>
+  <div class="nav">
+    <div class="row">
+      <p style="padding: 10px; padding-left: 20px; font-size: 30px">Forum</p>
+    </div>
+    <div class="row">
+      <p class="a" [routerLink]="['/']">Home</p>
+      <p class="a" [routerLink]="['/profile', userId]">Profile</p>
+      <p class="b">Welcome <a class="a" [routerLink]="['/profile', userId]">{{ username }}</a></p>
+      <p class="a" (click)="logOut()">Log out</p>
+    </div>
+  </div>
+
+  <div class="thread">
+    <p>Create a thread</p>
+    <form #postForm="ngForm" (ngSubmit)="saveThread(postForm.value)" ngNativeValidate >
+      <input type="hidden" name="date" [ngModel]="getCurDatetime()" required/>
+      <input type="hidden" name="userId" [ngModel]="userId" required/>
+      <input type="hidden" name="categoryId" [ngModel]="categoryId" ngModel required/>
+
+      <div class="th">
+        <div class="row" style="color: darkslategray; justify-content: space-between">
+          <p style="font-size: 15px">{{ username }}</p>
+        </div>
+
+        <input placeholder="Thread name" style="margin-top: 5px; padding: 5px; border: 1px solid black; border-radius: 8px; width: 200px; font-size: 20px" type="text" name="name" ngModel required/>
+        <br>
+        <textarea placeholder="Thread content" style="height: 200px; margin-top: 5px; padding: 5px; border: 1px solid black; border-radius: 8px; width: calc(100%  - 10px); font-size: 18px" type="text" name="content" ngModel required></textarea>
+
+        <div class="row" style="justify-content: right">
+          <button type="button" [routerLink]="['/category', categoryId]">Cancel</button>
+          <button type="submit">Save</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</main>

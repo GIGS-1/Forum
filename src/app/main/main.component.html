@@ -1,0 +1,197 @@
+<style>
+  * {
+    font-family: Arial;
+
+    margin: 0;
+    padding: 0;
+  }
+  .main {
+    margin: auto;
+  }
+
+  .nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 60px;
+    align-items: center;
+    background-color: #145185;
+    color: white;
+  }
+
+  .row {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .nav p {
+    padding: 10px;
+    font-size: 15px;
+  }
+
+  .nav .a {
+    color: white;
+    transition: color 0.2s;
+  }
+  .nav .a:hover {
+    color: #cfcfcf;
+  }
+  .nav .a:active {
+    color: #888888;
+  }
+
+  .categories {
+    margin: 20px;
+  }
+
+  .categories p {
+    font-size: 25px;
+  }
+
+  .categories .row button {
+    width: 150px;
+    background-color: #145185;
+    color: white;
+    border-radius: 8px;
+    transition: color 0.2s;
+    transition: background-color 0.2s;
+  }
+
+  .categories .row button:hover {
+    color: #cfcfcf;
+    background-color: #0d375a;
+  }
+
+  .categories .row button:active {
+    color: #888888;
+    background-color: #061c2e;
+  }
+
+  .categories .cat {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-size: 20px;
+  }
+
+  .categories .cat a {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: calc(100% - 120px);
+    padding: 20px;
+    color: black;
+    text-decoration: none;
+    background-color: #e3e7ef;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+  }
+
+  .categories .cat a:hover {
+    background-color: #c3c7cf;
+  }
+
+  .categories .cat a:active {
+    background-color: #8f9197;
+  }
+
+  .categories .cat button {
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: #145185;
+    color: white;
+    border-radius: 8px;
+    transition: color 0.2s;
+    transition: background-color 0.2s;
+  }
+
+  .categories .cat button:hover {
+    color: #cfcfcf;
+    background-color: #0d375a;
+  }
+
+  .categories .cat button:active {
+    color: #888888;
+    background-color: #061c2e;
+  }
+
+  .add {
+    width: 300px;
+    margin: auto;
+    justify-items: center;
+    padding: 20px;
+    background-color: #e3e7ef;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .add p {
+    padding: 5px;
+  }
+
+  .add input {
+    height: 30px;
+  }
+
+  .add button {
+    margin: 10px;
+    margin-left: 0px;
+    width: 100px;
+    padding: 5px;
+    background-color: #145185;
+    color: white;
+    border-radius: 8px;
+    transition: color 0.2s;
+    transition: background-color 0.2s;
+  }
+
+  .add button:hover {
+    color: #cfcfcf;
+    background-color: #0d375a;
+  }
+
+  .add button:active {
+    color: #888888;
+    background-color: #061c2e;
+  }
+</style>
+
+<main class="main">
+  <div class="nav">
+    <div class="row">
+      <p style="padding: 10px; padding-left: 20px; font-size: 30px">Forum</p>
+    </div>
+    <div class="row">
+      <p class="a" [routerLink]="['/']">Home</p>
+      <p class="a" [routerLink]="['/profile', userId]">Profile</p>
+      <p class="b">Welcome <a class="a" [routerLink]="['/profile', userId]">{{ username }}</a></p>
+      <p class="a" (click)="logOut()">Log out</p>
+    </div>
+  </div>
+
+  <div class="categories">
+    <div class="row" style="justify-content: space-between">
+      <p>Categories</p>
+      <button id="catButton" *ngIf="(user | toUser)?.role == 'admin'" (click)="showAddCategoryWindow()">Add Category</button>
+    </div>
+    <div class="cat" *ngFor = "let category of categories | keyvalue">
+      <a [routerLink]="['/category', category.key]">
+        <p>{{ (category.value | toCategory).name }}</p>
+        <p>{{ catCounts.get(category.key) }}</p>
+      </a>
+      <button *ngIf="(user | toUser)?.role == 'admin'" (click)="deleteCategory(category.key)">x</button>
+    </div>
+  </div>
+
+  <div id="addCategoryDiv" style="display: none">
+    <form class="add" #postForm="ngForm" (ngSubmit)="send(postForm.value)" ngNativeValidate >
+      <p>Add a category</p>
+
+      <p>Name:</p>
+      <input type="text" name="name" ngModel required/>
+      <button type="submit">Send</button>
+    </form>
+  </div>
+</main>

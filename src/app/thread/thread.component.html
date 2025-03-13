@@ -1,0 +1,249 @@
+<style>
+  * {
+    font-family: Arial;
+
+    margin: 0;
+    padding: 0;
+  }
+
+  .main {
+    margin: auto;
+  }
+
+  .nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 60px;
+    align-items: center;
+    background-color: #145185;
+    color: white;
+  }
+
+  .row {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .nav p {
+    padding: 10px;
+    font-size: 15px;
+  }
+
+  .nav .a {
+    color: white;
+    transition: color 0.2s;
+  }
+  .nav .a:hover {
+    color: #cfcfcf;
+  }
+  .nav .a:active {
+    color: #888888;
+  }
+
+  .comments {
+    margin: 20px;
+  }
+
+  .comments p {
+    font-size: 20px;
+  }
+
+  .comments .comm {
+    margin-top: 10px;
+    width: calc(100% - 40px);
+    padding: 20px;
+    background-color: #e3e7ef;
+    border-radius: 8px;
+  }
+
+  .comments .row button {
+    width: 60px;
+    background-color: #145185;
+    color: white;
+    padding: 5px;
+    margin-left: 5px;
+    margin-top: 5px;
+    border-radius: 8px;
+    transition: color 0.2s;
+    transition: background-color 0.2s;
+  }
+
+  .comments .row button:hover {
+    color: #cfcfcf;
+    background-color: #0d375a;
+  }
+
+  .comments .row button:active {
+    color: #888888;
+    background-color: #061c2e;
+  }
+
+
+
+
+
+
+  .thread {
+    margin: 20px;
+  }
+
+  .thread p {
+    font-size: 20px;
+  }
+
+  .thread .th {
+    margin-top: 10px;
+    width: calc(100% - 40px);
+    padding: 20px;
+    background-color: #e3e7ef;
+    border-radius: 8px;
+  }
+
+  .thread .row button {
+    width: 60px;
+    background-color: #145185;
+    color: white;
+    padding: 5px;
+    margin-left: 5px;
+    margin-top: 5px;
+    border-radius: 8px;
+    transition: color 0.2s;
+    transition: background-color 0.2s;
+  }
+
+  .thread .row button:hover {
+    color: #cfcfcf;
+    background-color: #0d375a;
+  }
+
+  .thread .row button:active {
+    color: #888888;
+    background-color: #061c2e;
+  }
+
+
+</style>
+
+<main class="main">
+  <div class="nav">
+    <div class="row">
+      <p style="padding: 10px; padding-left: 20px; font-size: 30px">Forum</p>
+    </div>
+    <div class="row">
+      <p class="a" [routerLink]="['/']">Home</p>
+      <p class="a" [routerLink]="['/profile', userId]">Profile</p>
+      <p class="b">Welcome <a class="a" [routerLink]="['/profile', userId]">{{ username }}</a></p>
+      <p class="a" (click)="logOut()">Log out</p>
+    </div>
+  </div>
+
+  <div class="thread">
+    <div class="th" id="{{ threadId }}_original">
+      <div class="row" style="color: darkslategray; justify-content: space-between">
+        <p style="font-size: 15px">{{ threadUser }}</p>
+        <p style="font-size: 15px">{{ (thread | toThread)?.date }}</p>
+      </div>
+
+      <p style="padding-top: 5px">{{ (thread | toThread)?.name }}</p>
+      <p style="padding-top: 5px; font-size: 18px">{{ (thread | toThread)?.content }}</p>
+
+      <div class="row"  style="color: darkslategray; justify-content: right">
+        <p id="{{ threadId }}_likeCount" style="padding-right: 5px">0</p>
+        <p style="font-size: 15px" id="{{ threadId }}_like" (click)="like(threadId)">🩶</p>
+      </div>
+
+      <div class="row" style="justify-content: right" *ngIf="(thread | toThread)?.userId == userId">
+        <button (click)="edit(threadId)">Edit</button>
+        <button (click)="deleteThread()">Delete</button>
+      </div>
+    </div>
+    <div id="{{ threadId }}_form" style="display: none">
+      <form #postForm1="ngForm" (ngSubmit)="editThread(postForm1.value)" ngNativeValidate >
+        <input type="hidden" name="date" [ngModel]="getCurDatetime()" required/>
+        <input type="hidden" name="userId" [ngModel]="(thread | toThread)?.userId" required/>
+        <input type="hidden" name="categoryId" [ngModel]="(thread | toThread)?.categoryId" ngModel required/>
+
+        <div class="th" id="{{ threadId }}_original">
+          <div class="row" style="color: darkslategray; justify-content: space-between">
+            <p style="font-size: 15px">{{ threadUser }}</p>
+            <p style="font-size: 15px">{{ (thread | toThread)?.date }}</p>
+          </div>
+
+          <input style="margin-top: 5px; padding: 5px; border: 1px solid black; border-radius: 8px; width: 200px; font-size: 20px" type="text" name="name" [ngModel]="(thread | toThread)?.name" required/>
+          <br>
+          <textarea style="margin-top: 5px; padding: 5px; border: 1px solid black; border-radius: 8px; width: calc(100% - 10px); font-size: 18px" type="text" name="content" [ngModel]="(thread | toThread)?.content" required></textarea>
+
+          <div class="row"  style="color: darkslategray; justify-content: right">
+            <p id="{{ threadId }}_likeCount1" style="padding-right: 5px">0</p>
+            <p style="font-size: 15px" id="{{ threadId }}_like1" (click)="like(threadId)">🩶</p>
+          </div>
+
+          <div class="row" style="justify-content: right" *ngIf="(thread | toThread)?.userId == userId">
+            <button type="button" (click)="cancel(threadId)">Cancel</button>
+            <button type="submit">Save</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="comments">
+    <p>Comments</p>
+    <div *ngFor = "let comment of comments | keyvalue">
+      <div class="comm" id="{{ comment.key }}_original" *ngIf="(comment.value | toComment)?.threadId == threadId">
+        <div class="row" style="color: darkslategray; justify-content: space-between">
+          <p id="{{ comment.key }}_username" style="font-size: 15px"></p>
+          <p style="font-size: 15px">{{ (comment.value | toComment)?.date }}</p>
+        </div>
+        <p  style="padding-top: 5px">{{ (comment.value | toComment)?.content }}</p>
+        <div class="row"  style="color: darkslategray; justify-content: right">
+          <p id="{{ comment.key }}_likeCount" style="padding-right: 5px">0</p>
+          <p style="font-size: 15px" id="{{ comment.key }}_like" (click)="like(comment.key)">🩶</p>
+        </div>
+        <div class="row" style="justify-content: right" *ngIf="(comment.value | toComment)?.userId == userId">
+          <button (click)="edit(comment.key)">Edit</button>
+          <button (click)="deleteComment(comment.key)">Delete</button>
+        </div>
+      </div>
+      <div class="comm" id="{{ comment.key }}_form" style="display: none">
+        <form #postForm2="ngForm" (ngSubmit)="editComment(comment.key, postForm2.value)" ngNativeValidate >
+          <input type="hidden" name="date" [ngModel]="getCurDatetime()" required/>
+          <input type="hidden" name="userId" [ngModel]="(comment.value | toComment)?.userId" required/>
+          <input type="hidden" name="threadId" [ngModel]="(comment.value | toComment)?.threadId" ngModel required/>
+
+          <div class="row" style="color: darkslategray; justify-content: space-between">
+            <p id="{{ comment.key }}_username1" style="font-size: 15px"></p>
+            <p style="font-size: 15px">{{ (comment.value | toComment)?.date }}</p>
+          </div>
+          <textarea style="margin-top: 5px; padding: 5px; border: 1px solid black; border-radius: 8px; width: calc(100% - 10px); font-size: 20px" type="text" name="content" [ngModel]="(comment.value | toComment)?.content" required></textarea>
+          <div class="row"  style="color: darkslategray; justify-content: right">
+            <p id="{{ comment.key }}_likeCount1" style="padding-right: 5px">0</p>
+            <p style="font-size: 15px" id="{{ comment.key }}_like1" (click)="like(comment.key)">🩶</p>
+          </div>
+          <div class="row" style="justify-content: right" *ngIf="(comment.value | toComment)?.userId == userId">
+            <button type="button" (click)="cancel(comment.key)">Cancel</button>
+            <button type="submit">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="comments">
+    <form #postForm3="ngForm" (ngSubmit)="send(postForm3.value)" ngNativeValidate >
+      <p>Add comment: </p>
+      <input type="hidden" name="date" [ngModel]="getCurDatetime()" required/>
+      <input type="hidden" name="userId" [ngModel]="userId" required/>
+      <input type="hidden" name="threadId" [ngModel]="threadId" required/>
+
+      <textarea style="margin-top: 5px; border: 1px solid black; border-radius: 8px; width: calc(100%); font-size: 20px" id="commentField" type="text" name="content" ngModel required></textarea>
+
+      <div class="row" style="justify-content: right">
+        <button type="submit">Send</button>
+      </div>
+    </form>
+  </div>
+</main>

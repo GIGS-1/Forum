@@ -1,0 +1,77 @@
+<style>
+  * {
+    font-family: Arial;
+
+    margin: 0;
+    padding: 0;
+  }
+
+  .main {
+    margin: auto;
+  }
+
+  .field {
+    width: 500px;
+    margin: auto;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .field p {
+    font-size: 20px;
+  }
+
+  .field .form {
+    margin-top: 10px;
+    width: calc(100% - 45px);
+    padding: 20px;
+    background-color: #e3e7ef;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+    height: 400px;
+  }
+
+  .field .row button {
+    width: 100px;
+    background-color: #145185;
+    color: white;
+    padding: 5px;
+    margin-left: 5px;
+    margin-top: 5px;
+    border-radius: 8px;
+    transition: color 0.2s;
+    transition: background-color 0.2s;
+  }
+
+  .field .row button:hover {
+    color: #cfcfcf;
+    background-color: #0d375a;
+  }
+
+  .field .row button:active {
+    color: #888888;
+    background-color: #061c2e;
+  }
+</style>
+
+<main class="main">
+  <div class="field">
+
+    <div class="form">
+      <p style="font-weight: bold; margin-top: 40px;">Log in</p>
+      <form #postForm="ngForm" (ngSubmit)="logIn(postForm.value)" ngNativeValidate>
+        <p style="margin-top: 20px">Username </p>
+        <input style="margin-top: 5px; padding: 5px; border: 1px solid black; border-radius: 8px; width: 200px; font-size: 15px" type="text" name="username" ngModel required>
+        <p style="margin-top: 20px">Password</p>
+        <input style="margin-top: 5px; margin-bottom: 20px; padding: 5px; border: 1px solid black; border-radius: 8px; width: 200px; font-size: 15px" type="password" name="pass" ngModel required>
+        <div class="row" style="justify-content: right">
+          <button type="submit">Log in</button>
+          <button routerLink="/register">Register!</button>
+        </div>
+      </form>
+
+      <p id="message" style="margin-top: 50px; font-size: 16px"></p>
+    </div>
+  </div>
+
+</main>

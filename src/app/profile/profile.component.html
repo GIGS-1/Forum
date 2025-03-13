@@ -1,0 +1,231 @@
+<style>
+  * {
+    font-family: Arial;
+
+    margin: 0;
+    padding: 0;
+  }
+
+  .main {
+    margin: auto;
+  }
+
+  .nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 60px;
+    align-items: center;
+    background-color: #145185;
+    color: white;
+  }
+
+  .row {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .nav p {
+    padding: 10px;
+    font-size: 15px;
+  }
+
+  .nav .a {
+    color: white;
+    transition: color 0.2s;
+  }
+  .nav .a:hover {
+    color: #cfcfcf;
+  }
+  .nav .a:active {
+    color: #888888;
+  }
+
+  .comments {
+    margin: 10px;
+  }
+
+  .comments p {
+    font-size: 20px;
+    padding-left: 10px;
+  }
+
+  .comments .comm {
+    margin-top: 10px;
+    width: calc(100% - 45px);
+    padding: 20px;
+    background-color: #e3e7ef;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+  }
+
+  .comments .comm:hover {
+    background-color: #d2d7e3;
+  }
+
+  .comments .comm:active {
+    background-color: #b0b9c8;
+  }
+
+  .comments .row button {
+    width: 60px;
+    background-color: #145185;
+    color: white;
+    padding: 5px;
+    margin-left: 5px;
+    margin-top: 5px;
+    border-radius: 8px;
+    transition: color 0.2s;
+    transition: background-color 0.2s;
+  }
+
+  .comments .row button:hover {
+    color: #cfcfcf;
+    background-color: #0d375a;
+  }
+
+  .comments .row button:active {
+    color: #888888;
+    background-color: #061c2e;
+  }
+
+
+
+
+
+
+  .thread {
+    margin: 20px;
+    margin-bottom: 50px;
+  }
+
+  .thread p {
+    font-size: 20px;
+  }
+
+  .thread .th {
+    margin-top: 10px;
+    width: calc(100% - 45px);
+    padding: 20px;
+    background-color: #e3e7ef;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+  }
+
+  .thread .th:hover {
+    background-color: #d2d7e3;
+  }
+
+  .thread .th:active {
+    background-color: #b0b9c8;
+  }
+
+  .thread .row button {
+    width: 60px;
+    background-color: #145185;
+    color: white;
+    padding: 5px;
+    margin-left: 5px;
+    margin-top: 5px;
+    border-radius: 8px;
+    transition: color 0.2s;
+    transition: background-color 0.2s;
+  }
+
+  .thread .row button:hover {
+    color: #cfcfcf;
+    background-color: #0d375a;
+  }
+
+  .thread .row button:active {
+    color: #888888;
+    background-color: #061c2e;
+  }
+
+
+
+
+  .userData {
+    margin: 20px;
+    margin-bottom: 50px;
+  }
+
+  .userData p {
+    font-size: 20px;
+  }
+
+  .userData .us {
+    margin-top: 10px;
+    width: calc(100% - 45px);
+    padding: 20px;
+    background-color: #e3e7ef;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+  }
+</style>
+
+<main class="main">
+  <div class="nav">
+    <div class="row">
+      <p style="padding: 10px; padding-left: 20px; font-size: 30px">Forum</p>
+    </div>
+    <div class="row">
+      <p class="a" [routerLink]="['/']">Home</p>
+      <p class="a" [routerLink]="['/profile', userId]">Profile</p>
+      <p class="b">Welcome <a class="a" [routerLink]="['/profile', userId]">{{ username }}</a></p>
+      <p class="a" (click)="logOut()">Log out</p>
+    </div>
+  </div>
+
+  <div class="userData">
+    <p>User data</p>
+    <div class="us">
+      <p>Name: {{ (user | toUser)?.name }}</p>
+      <p>Username: {{ (user | toUser)?.username }}</p>
+      <p>E-mail: {{ (user | toUser)?.eMail }}</p>
+      <p>Role: {{ (user | toUser)?.role }}</p>
+    </div>
+  </div>
+
+  <div class="thread">
+    <p>Threads</p>
+
+    <div *ngFor = "let thread of threads | keyvalue">
+        <a style="text-decoration: none; color: black" *ngIf="(thread.value | toThread)?.userId == userId" [routerLink]="['/thread', thread.key]">
+          <div class="th" >
+            <div class="row" style="color: darkslategray; justify-content: space-between">
+              <p style="font-size: 15px">{{ username }}</p>
+              <p style="font-size: 15px">{{ (thread.value | toThread)?.date }}</p>
+            </div>
+            <p style="padding-top: 5px">{{ (thread.value | toThread)?.name }}</p>
+            <p style="padding-top: 5px; font-size: 18px">{{ (thread.value | toThread)?.content }}</p>
+            <div class="row"  style="color: darkslategray; justify-content: right">
+              <p style="padding-right: 5px; font-size: 18px">Likes: </p>
+              <p style="font-size: 18px" id="{{ thread.key }}_likeCount">0</p>
+            </div>
+          </div>
+        </a>
+    </div>
+
+  </div>
+
+  <div class="comments">
+    <p>Comments</p>
+    <div class="comments" *ngFor = "let comment of comments | keyvalue">
+      <div class="comm" *ngIf="(comment.value | toComment)?.userId == userId">
+        <a style="text-decoration: none; color: black" [routerLink]="['/thread', (comment.value | toComment).threadId]">
+          <div class="row" style="color: darkslategray; justify-content: space-between">
+            <p id="{{ comment.key }}_username" style="font-size: 15px">{{ username }}</p>
+            <p style="font-size: 15px">{{ (comment.value | toComment)?.date }}</p>
+          </div>
+          <p style="padding-top: 5px">{{ (comment.value | toComment)?.content }}</p>
+          <div class="row"  style="color: darkslategray; justify-content: right">
+            <p style="padding-right: 5px; font-size: 18px">Likes: </p>
+            <p id="{{ comment.key }}_likeCount" style="padding-right: 5px">0</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+</main>
