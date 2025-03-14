@@ -13,3 +13,7 @@ Dodavanje i brisanje kategorija moguće je samo kao admin korisnik.
 Postoji glavni izbornik (pregled kategorija) te se koriste rute sa parametrima za otvaranje ekrana kategorije, dretve i korisničkih podataka.
 
 Kao baza podataka se koristi Firebase Realtime Database.
+
+## Video
+
+[![IMAGE ALT TEXT](http://img.youtube.com/vi/80pVrso-464/0.jpg)](http://www.youtube.com/watch?v=80pVrso-464 "Video Title")
